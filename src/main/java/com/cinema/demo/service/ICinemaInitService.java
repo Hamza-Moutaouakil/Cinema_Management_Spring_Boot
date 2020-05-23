@@ -9,5 +9,5 @@ public interface ICinemaInitService {
     public void initCategories();
     public void initFilms();
     public void initProjections();
-    public void initTickers();
+    public void initTickets();
 }
