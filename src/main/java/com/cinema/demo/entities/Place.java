@@ -1,5 +1,6 @@
 package com.cinema.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,11 +15,11 @@ public class Place {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int numero;
-    private double longtitude,latitude,altitude;
+    private double longitude,latidude,altitude;
     @ManyToOne
     private Salle salle;
-//    @OneToMany(mappedBy = "place")
-//    private Collection<Ticket> tickes;
-
+    @OneToMany(mappedBy = "place")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Collection<Ticket> tickets;
 
 }

@@ -24,14 +24,15 @@ public class DemoApplication implements CommandLineRunner {
 
     public void run (String... args) throws Exception {
         restConfiguration.exposeIdsFor(Film.class);
-        cinemaInitService.initCategories();
-        cinemaInitService.initCinemas();
-        cinemaInitService.initFilms();
-        cinemaInitService.initPlaces();
-        cinemaInitService.initProjections();
-        cinemaInitService.initSalles();
-        cinemaInitService.initTickets();
-
+//        cinemaInitService.initVilles();
+//        cinemaInitService.initCinemas();
+//        cinemaInitService.initSalles();
+//        cinemaInitService.initPlaces();
+//        cinemaInitService.initSeances();
+//        cinemaInitService.initCategories();
+//        cinemaInitService.initFilms();
+//        cinemaInitService.initProjections();
+//        cinemaInitService.initTickets();
 
     }
 

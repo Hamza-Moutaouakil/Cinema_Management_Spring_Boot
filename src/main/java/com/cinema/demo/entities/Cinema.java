@@ -21,4 +21,5 @@ public class Cinema implements Serializable {
     private Collection<Salle> salles;
     @ManyToOne
     private Ville ville;
+
 }
