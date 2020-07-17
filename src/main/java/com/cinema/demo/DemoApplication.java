@@ -3,6 +3,8 @@ package com.cinema.demo;
 import com.cinema.demo.dao.CategoryRepository;
 import com.cinema.demo.entities.Categorie;
 import com.cinema.demo.entities.Film;
+import com.cinema.demo.entities.Salle;
+import com.cinema.demo.entities.Ticket;
 import com.cinema.demo.service.ICinemaInitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +25,7 @@ public class DemoApplication implements CommandLineRunner {
     }
 
     public void run (String... args) throws Exception {
-        restConfiguration.exposeIdsFor(Film.class);
+        restConfiguration.exposeIdsFor(Film.class, Salle.class, Ticket.class);
         cinemaInitService.initVilles();
         cinemaInitService.initCinemas();
         cinemaInitService.initSalles();
@@ -33,8 +35,6 @@ public class DemoApplication implements CommandLineRunner {
         cinemaInitService.initFilms();
         cinemaInitService.initProjections();
         cinemaInitService.initTickets();
-
     }
-
 
 }
