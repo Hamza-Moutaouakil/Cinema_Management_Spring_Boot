@@ -37,19 +37,20 @@ public class CinemaInitServiceImpl implements  ICinemaInitService{
             villeRepository.save(ville);
         });
     }
-   @Override
-   public void initCinemas() {
-       villeRepository.findAll().forEach(v->{
-           Stream.of("MegaRama","IMAX","Founon","Chahrazad","Daouliz")
-                   .forEach(name->{
-                       Cinema cinema=new Cinema();
-                       cinema.setName(name);
-                       cinema.setNombreSalles(3+(int)(Math.random()*7));
-                       cinema.setVille(v);
-                       cinemaRepository.save(cinema);
-                   });
-       });
-   }
+
+    @Override
+    public void initCinemas() {
+        villeRepository.findAll().forEach(v->{
+            Stream.of("MegaRama","IMAX","Founon","Chahrazad","Daouliz")
+                    .forEach(name->{
+                        Cinema cinema=new Cinema();
+                        cinema.setName(name);
+                        cinema.setNombreSalles(3+(int)(Math.random()*7));
+                        cinema.setVille(v);
+                        cinemaRepository.save(cinema);
+                    });
+        });
+    }
 
     @Override
     public void initSalles() {
@@ -63,6 +64,7 @@ public class CinemaInitServiceImpl implements  ICinemaInitService{
             }
         });
     }
+
     @Override
     public void initPlaces() {
         salleRepository.findAll().forEach(s->{
