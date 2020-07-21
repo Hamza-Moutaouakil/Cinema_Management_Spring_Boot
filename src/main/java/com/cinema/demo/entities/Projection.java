@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.Date;
 
 
-
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Projection {
